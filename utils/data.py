@@ -36,12 +36,6 @@ def load_and_preprocess_data(file_path='dataset/Daily_Demand_Forecasting_Orders.
     y_train = scaler_y.fit_transform(y_train.values.reshape(-1, 1)).flatten()
     y_test = scaler_y.transform(y_test.values.reshape(-1, 1)).flatten()
 
-    # # Normalize target
-    # X_train = X_train / X_train.max(axis=0)
-    # X_test = X_test / X_train.max(axis=0)
-    # y_train = y_train / y_train.max()
-    # y_test = y_test / y_train.max()
-
     return X_train, X_test, y_train, y_test
 
 def k_fold_data(X, y, n_splits=5, random_state=42):
